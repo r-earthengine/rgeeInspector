@@ -1,4 +1,4 @@
-# **rgeeInspector** <img src="R/figures/logo.svg" align="right" width="25%">
+# **rgeeInspector** <img src="man/figures/logo.svg" align="right" width="25%">
 
 rgeeInspector is a new package complement for rgee that allow draw Earth Engine objects of interactivily from R
 
