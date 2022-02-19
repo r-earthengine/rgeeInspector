@@ -1,0 +1,15 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+WIP/*
+doc
+Meta
+renv/
+renv.lock
+.Rprofile
+export/
+.Renviron
+data/test/*
+test.R
+docs
