@@ -38,7 +38,7 @@ Imports:
  mapedit,
  rgee,
  magrittr,
- geojsonio,
+ geojsonsf,
  sf
 RoxygenNote: 7.1.2
 URL: https://ambarja.github.io/rgeeInspector/

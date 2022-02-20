@@ -24,21 +24,27 @@
 #' }
 #' @importFrom  rgee sf_as_ee ee_as_sf
 #' @importFrom  mapedit editMap
+#' @import geojsonsf
 #' @export
 
 ee_draw_geometry <- function(name, import_as = "A",properties = NULL ,color = "red", zoom = 5,...){
-  if(import_as == "geo"){
+  if(import_as == "A"){
     ee_object <- editMap() %>% sf_as_ee()
     Map$centerObject(ee_object,zoom = zoom)
     ee_output <- Map$addLayer(
-      eeObject = ee_object, visParams = list(color = color, width = 8)
+      eeObject = ee_object,
+      visParams = list(color = color, width = 8),
+      ...
     )
-  } else if(import_as =="fea"){
+
+  } else if(import_as =="B"){
     ee_object <- editMap() %>% sf_as_ee()
     Map$centerObject(ee_object,zoom = zoom)
     ee_feature <- ee$Feature(ee_object,properties)
     ee_output <- Map$addLayer(
-      eeObject = ee_object, visParams = list(color = color, width = 8)
+      eeObject = ee_object,
+      visParams = list(color = color, width = 8),
+      ...
     )
 
   } else{
@@ -46,10 +52,11 @@ ee_draw_geometry <- function(name, import_as = "A",properties = NULL ,color = "r
     Map$centerObject(ee_object,zoom = zoom)
     ee_feature <- ee$FeatureCollection(ee_object,properties)
     ee_output <- Map$addLayer(
-      eeObject = ee_object, visParams = list(color = color, width = 8)
+      eeObject = ee_object,
+      visParams = list(color = color, width = 8),
+      ...
     )
   }
-
   assign(name,ee_object,envir = .GlobalEnv)
   return(ee_output)
 }

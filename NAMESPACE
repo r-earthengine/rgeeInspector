@@ -2,6 +2,7 @@
 
 export("%>%")
 export(ee_draw_geometry)
+import(geojsonsf)
 importFrom(magrittr,"%>%")
 importFrom(mapedit,editMap)
 importFrom(rgee,ee_as_sf)
